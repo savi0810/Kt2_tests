@@ -7,7 +7,6 @@ def run_tests():
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     filename = f"test_results_{timestamp}.txt"
     
-    # Запускаем pytest через subprocess и записываем вывод в файл
     with open(filename, 'w') as f:
         result = subprocess.run([
             sys.executable, "-m", "pytest", 
