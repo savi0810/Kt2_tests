@@ -1,0 +1,32 @@
+============================= test session starts =============================
+platform win32 -- Python 3.12.4, pytest-8.4.1, pluggy-1.6.0 -- C:\Users\Александр\AppData\Local\Programs\Python\Python312\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Александр\Documents\тестирование\кт2
+collecting ... collected 8 items
+
+test_string_utils.py::TestGetStringLength::test_empty_string PASSED      [ 12%]
+test_string_utils.py::TestGetStringLength::test_multiline_string FAILED  [ 25%]
+test_string_utils.py::TestGetStringLength::test_spaces_string PASSED     [ 37%]
+test_string_utils.py::TestGetStringLength::test_unicode_string PASSED    [ 50%]
+test_string_utils.py::TestSaveToFile::test_save_string PASSED            [ 62%]
+test_string_utils.py::TestSaveToFile::test_save_empty_string PASSED      [ 75%]
+test_string_utils.py::TestDatabase::test_create_table PASSED             [ 87%]
+test_string_utils.py::TestDatabase::test_empty_database PASSED           [100%]
+
+================================== FAILURES ===================================
+__________________ TestGetStringLength.test_multiline_string __________________
+
+self = <test_string_utils.TestGetStringLength object at 0x00000229B8345850>
+
+    def test_multiline_string(self):
+        text = """Line 1
+        Line 2
+        Line 3"""
+>       assert get_string_length(text) == 33
+E       AssertionError: assert 36 == 33
+E        +  where 36 = get_string_length('Line 1\n        Line 2\n        Line 3')
+
+test_string_utils.py:14: AssertionError
+=========================== short test summary info ===========================
+FAILED test_string_utils.py::TestGetStringLength::test_multiline_string - Ass...
+========================= 1 failed, 7 passed in 0.12s =========================
